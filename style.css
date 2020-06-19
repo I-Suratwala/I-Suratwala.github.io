@@ -1,0 +1,25 @@
+.text {
+  background-color: yellow;
+  color: purple;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: helvetica;
+}
+#controls {
+  background-color: green;
+  color: red;
+}
+.controls {
+  color: blue;
+  font-size: 25px;
+  background-color: orange;
+}
+#img {
+  text-align: center;
+}
+.link {
+  text-align: center;
+  width: 24px;
+  height: 24px;
+}

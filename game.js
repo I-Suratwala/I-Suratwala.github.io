@@ -22,6 +22,7 @@ var bombs;
 var platforms;
 var cursors;
 var score = 0;
+var highscore = 0;
 var gameOver = false;
 var scoreText;
 
@@ -35,7 +36,6 @@ function preload ()
     this.load.image('bomb', 'assets/newbomb.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
-
 function create ()
 {
     //  A simple background for our game
@@ -103,7 +103,7 @@ function create ()
 
     //  The score
     scoreText = this.add.text(16, 16, 'score: 0', { fontWeight: "bold", fontSize: '32px', fill: '#000' });
-
+    var highScoreText = this.add.text(16,20, "highscore: 0", {fontWeight: "bold", fontSize: "32px", fill: "#000"});
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
@@ -121,7 +121,7 @@ function update ()
 {
     if (gameOver)
     {
-        return;
+         return;
     }
 
     if (cursors.left.isDown)
@@ -193,5 +193,9 @@ function hitBomb (player, bomb)
       player.anims.play('turn');
 
       gameOver = true;
+
+      if (score > highscore) {
+        highScoreText.setText("Highscore: " + score);
+      }
     }
 }
