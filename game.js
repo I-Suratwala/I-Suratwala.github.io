@@ -194,8 +194,6 @@ function hitBomb (player, bomb)
 
       gameOver = true;
 
-      if (score > highscore) {
-        highScoreText.setText("Highscore: " + score);
-      }
+      
     }
 }
